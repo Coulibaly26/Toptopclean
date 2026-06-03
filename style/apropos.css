@@ -1,0 +1,743 @@
+
+
+/* --- CONFIGURATION DE L'IMAGE --- */
+.hero-img {
+    height: 70vh; /* Utilise 70% de la hauteur de l'écran pour plus de clarté */
+    min-height: 400px;
+    object-fit: cover;
+    object-position: center 20%; /* Centre l'image sur le visage/haut du corps */
+}
+
+/* --- LA CARTE BLANCHE --- */
+.hero-header {
+    position: relative;
+    margin-bottom: 120px; /* Espace pour la carte sur mobile */
+}
+
+.hero-info-card {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    z-index: 100;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Layout Flexible pour le contenu de la carte */
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #2D2926;
+    margin-bottom: 10px;
+}
+
+.info-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge-item {
+    background: #dae2ef;
+    color: #5D4037;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-contact-hero {
+    background: #18789b;
+    color: white !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVE (PETIT ÉCRAN) --- */
+@media (max-width: 991px) {
+    .hero-img {
+        height: 50vh; /* Image un peu plus courte sur mobile */
+    }
+
+    .info-wrapper {
+        flex-direction: column; /* Empile le texte et le bouton */
+        text-align: center;
+    }
+
+    .info-badges {
+        justify-content: center;
+    }
+
+    .hero-info-card {
+        bottom: -100px; /* Plus d'espace car la carte devient haute */
+        width: 95%; 
+        padding: 20px;
+    }
+
+    .info-title {
+        font-size: 1.4rem;
+    }
+
+    .btn-contact-hero {
+        width: 100%; /* Bouton prend toute la largeur sur mobile */
+        text-align: center;
+    }
+}
+
+/* Flèches plus discrètes */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    background-size: 50%;
+}
+
+
+
+/* ===== SECTION NOTRE HISTOIRE (STYLE VISUEL CROISÉ) ===== */
+.histoire-section {
+    padding: 100px 0;
+    background-color: #fafafa; /* Léger fond gris clair pour alterner avec la section précédente */
+    overflow: hidden;
+}
+
+/* Le conteneur spécifique des images de droite */
+.histoire-stack-container {
+    position: relative !important;
+    height: 540px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+}
+
+/* Image en haut à gauche du bloc de droite */
+.histoire-box-top {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 70% !important;
+    z-index: 10 !important;
+}
+
+/* Image en bas à droite du bloc de droite */
+.histoire-box-bottom {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 70% !important;
+    z-index: 5 !important;
+}
+
+/* Propriétés des photos (Taille fixe et grands arrondis) */
+.histoire-img {
+    width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 40px !important; /* Même arrondi premium style Mcdonald's */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Typographie de l'histoire */
+.content-box-histoire {
+    padding-right: 15px;
+}
+
+.histoire-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0B5E7E;
+    margin-bottom: 25px;
+}
+
+.histoire-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    text-align: justify;
+}
+
+/* ===== EN PETITE PAGE (TABLETTES ET ÉCRANS INTERMÉDIAIRES) ===== */
+@media (max-width: 991.98px) {
+    .histoire-section {
+        padding: 60px 0;
+    }
+    .histoire-stack-container {
+        height: 440px !important;
+        margin-bottom: 40px !important;
+    }
+    .histoire-img {
+        height: 260px !important;
+        border-radius: 30px !important;
+    }
+    .histoire-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== EN PETITE PAGE (MOBILE / SMARTPHONE) - EFFET MAINTENU ===== */
+@media (max-width: 575.98px) {
+    .histoire-stack-container {
+        /* On préserve le positionnement absolu pour garder le croisement des images */
+        height: 320px !important;
+        max-width: 320px !important; 
+        margin-bottom: 30px !important;
+    }
+    
+    .histoire-box-top, .histoire-box-bottom {
+        width: 72% !important;
+    }
+    
+    .histoire-img {
+        height: 190px !important; /* Taille réduite pour ne pas déborder de l'écran du téléphone */
+        border-radius: 25px !important;
+    }
+}
+
+
+
+
+/* Configuration Générale du Footer */
+.custom-footer {
+    background-color: #0d1b2a; /* Bleu nuit de l'image */
+    color: white;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* La vague blanche et orange sur les côtés */
+.custom-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2017/02/10/14/10/virtual-2055232_1280.png'); /* Optionnel pour texture */
+    opacity: 0.05;
+}
+
+/* Styles Texte Gauche */
+.name-text { font-weight: 700; letter-spacing: 2px; margin-bottom: 0; }
+.surname-text { color: #d97d66; } /* Orange/Doré */
+.position-text { font-size: 0.9rem; color: #a1a1a1; }
+.footer-divider { width: 50px; border: 2px solid white; opacity: 1; margin: 15px 0; }
+.contact-list li { margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+.contact-list i { color: #d97d66; }
+
+/* Avatar Central */
+.footer-avatar-wrapper {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid #1b263b;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.footer-profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Branding Droite */
+.brand-logo-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d97d66;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #d97d66;
+    margin-bottom: 15px;
+}
+.brand-name { font-weight: 700; font-size: 1.5rem; }
+.clean-text { color: #d97d66; }
+.tagline { font-size: 0.8rem; color: #a1a1a1; }
+.social-icons { margin-top: 15px; display: flex; justify-content: flex-end; gap: 15px; }
+.social-icons i { font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+.social-icons i:hover { color: #d97d66; }
+
+/* Copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Forme SVG (Vague) */
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.footer-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+.footer-wave .shape-fill { fill: #FFFFFF; } /* Fond de la page (blanc) */
+
+
+
+
+
+/* --- CONFIGURATION DE L'IMAGE --- */
+.hero-img {
+    height: 70vh; /* Utilise 70% de la hauteur de l'écran pour plus de clarté */
+    min-height: 400px;
+    object-fit: cover;
+    object-position: center 20%; /* Centre l'image sur le visage/haut du corps */
+}
+
+/* --- LA CARTE BLANCHE --- */
+.hero-header {
+    position: relative;
+    margin-bottom: 120px; /* Espace pour la carte sur mobile */
+}
+
+.hero-info-card {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    z-index: 100;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Layout Flexible pour le contenu de la carte */
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #2D2926;
+    margin-bottom: 10px;
+}
+
+.info-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge-item {
+    background: #dae2ef;
+    color: #5D4037;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-contact-hero {
+    background: #18789b;
+    color: white !important;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVE (PETIT ÉCRAN) --- */
+@media (max-width: 991px) {
+    .hero-img {
+        height: 50vh; /* Image un peu plus courte sur mobile */
+    }
+
+    .info-wrapper {
+        flex-direction: column; /* Empile le texte et le bouton */
+        text-align: center;
+    }
+
+    .info-badges {
+        justify-content: center;
+    }
+
+    .hero-info-card {
+        bottom: -100px; /* Plus d'espace car la carte devient haute */
+        width: 95%; 
+        padding: 20px;
+    }
+
+    .info-title {
+        font-size: 1.4rem;
+    }
+
+    .btn-contact-hero {
+        width: 100%; /* Bouton prend toute la largeur sur mobile */
+        text-align: center;
+    }
+}
+
+/* Flèches plus discrètes */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    background-size: 50%;
+}
+
+
+
+/* ===== SECTION NOTRE HISTOIRE (STYLE VISUEL CROISÉ) ===== */
+.histoire-section {
+    padding: 100px 0;
+    background-color: #fafafa; /* Léger fond gris clair pour alterner avec la section précédente */
+    overflow: hidden;
+}
+
+/* Le conteneur spécifique des images de droite */
+.histoire-stack-container {
+    position: relative !important;
+    height: 540px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+}
+
+/* Image en haut à gauche du bloc de droite */
+.histoire-box-top {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 70% !important;
+    z-index: 10 !important;
+}
+
+/* Image en bas à droite du bloc de droite */
+.histoire-box-bottom {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: 70% !important;
+    z-index: 5 !important;
+}
+
+/* Propriétés des photos (Taille fixe et grands arrondis) */
+.histoire-img {
+    width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 40px !important; /* Même arrondi premium style Mcdonald's */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Typographie de l'histoire */
+.content-box-histoire {
+    padding-right: 15px;
+}
+
+.histoire-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0B5E7E;
+    margin-bottom: 25px;
+}
+
+.histoire-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    text-align: justify;
+}
+
+/* ===== EN PETITE PAGE (TABLETTES ET ÉCRANS INTERMÉDIAIRES) ===== */
+@media (max-width: 991.98px) {
+    .histoire-section {
+        padding: 60px 0;
+    }
+    .histoire-stack-container {
+        height: 440px !important;
+        margin-bottom: 40px !important;
+    }
+    .histoire-img {
+        height: 260px !important;
+        border-radius: 30px !important;
+    }
+    .histoire-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== EN PETITE PAGE (MOBILE / SMARTPHONE) - EFFET MAINTENU ===== */
+@media (max-width: 575.98px) {
+    .histoire-stack-container {
+        /* On préserve le positionnement absolu pour garder le croisement des images */
+        height: 320px !important;
+        max-width: 320px !important; 
+        margin-bottom: 30px !important;
+    }
+    
+    .histoire-box-top, .histoire-box-bottom {
+        width: 72% !important;
+    }
+    
+    .histoire-img {
+        height: 190px !important; /* Taille réduite pour ne pas déborder de l'écran du téléphone */
+        border-radius: 25px !important;
+    }
+}
+
+
+
+
+/* Configuration Générale du Footer */
+.custom-footer {
+    background-color: #0d1b2a; /* Bleu nuit de l'image */
+    color: white;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* La vague blanche et orange sur les côtés */
+.custom-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2017/02/10/14/10/virtual-2055232_1280.png'); /* Optionnel pour texture */
+    opacity: 0.05;
+}
+
+/* Styles Texte Gauche */
+.name-text { font-weight: 700; letter-spacing: 2px; margin-bottom: 0; }
+.surname-text { color: #d97d66; } /* Orange/Doré */
+.position-text { font-size: 0.9rem; color: #a1a1a1; }
+.footer-divider { width: 50px; border: 2px solid white; opacity: 1; margin: 15px 0; }
+.contact-list li { margin-bottom: 8px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+.contact-list i { color: #d97d66; }
+
+/* Avatar Central */
+.footer-avatar-wrapper {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid #1b263b;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.footer-profile-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Branding Droite */
+.brand-logo-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d97d66;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #d97d66;
+    margin-bottom: 15px;
+}
+.brand-name { font-weight: 700; font-size: 1.5rem; }
+.clean-text { color: #d97d66; }
+.tagline { font-size: 0.8rem; color: #a1a1a1; }
+.social-icons { margin-top: 15px; display: flex; justify-content: flex-end; gap: 15px; }
+.social-icons i { font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+.social-icons i:hover { color: #d97d66; }
+
+/* Copyright */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Forme SVG (Vague) */
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.footer-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+}
+.footer-wave .shape-fill { fill: #FFFFFF; } /* Fond de la page (blanc) */
+
+
+
+/* ==========================================================================
+   SECTION COMPLÈTE : STYLE CARTES MÉTIERS VERTICALES (IMAGE_3D57C2)
+   ========================================================================== */
+
+.metiers-section {
+    padding: 80px 0 140px 0;
+    background-color: #ffffff;
+}
+
+/* --- TYPOGRAPHIE EN-TÊTE --- */
+.metiers-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.metiers-main-title .sub-title {
+    display: block;
+    font-weight: 300;
+    color: #777777;
+    font-size: 2.2rem;
+    margin-top: 5px;
+}
+
+.metiers-intro-text {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.7;
+    max-width: 90%;
+    margin-bottom: 40px;
+}
+
+/* --- DESIGN DES CARTES VERTICALES --- */
+.metier-card {
+    height: 480px; /* Cartes bien hautes et élancées */
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px; /* Très grands angles arrondis sur toute la carte */
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Pousse le texte vers le bas de la carte */
+    padding: 30px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol pro */
+.metier-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Style du texte à l'intérieur de la carte */
+.metier-card-content {
+    color: #ffffff !important; /* Force le texte en blanc par-dessus l'image */
+    z-index: 2;
+}
+
+.metier-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: #ffffff !important;
+}
+
+.metier-card-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    margin-bottom: 0;
+    color: #e5e5e5 !important;
+}
+
+/* --- EFFET DE VAGUE / DÉCALAGE PROGRESSIF (Comme sur la maquette) --- */
+@media (min-width: 1200px) {
+    .card-offset-1 { transform: translateY(25px); }
+    .card-offset-2 { transform: translateY(50px); }
+    .card-offset-3 { transform: translateY(75px); }
+}
+
+/* ==========================================================================
+   VERSION PETITE TAILLE & RESPONSIVE (IPAD & MOBILE)
+   ========================================================================== */
+
+/* Version Tablette (2 colonnes par ligne) */
+@media (max-width: 1199.98px) {
+    .metiers-section {
+        padding: 60px 0;
+    }
+    .metier-card {
+        height: 400px; /* Un peu plus compact sur tablette */
+        border-radius: 30px;
+    }
+    /* On annule l'effet de vague sur petit écran pour éviter les gros trous blancs */
+    .card-offset-1, .card-offset-2, .card-offset-3 {
+        transform: none !important;
+    }
+}
+
+/* Version Smartphone / Petite taille strict */
+@media (max-width: 575.98px) {
+    .metiers-main-title {
+        font-size: 1.8rem;
+    }
+    .metiers-main-title .sub-title {
+        font-size: 1.6rem;
+    }
+    .metiers-intro-text {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+    .metier-card {
+        height: 350px; /* Hauteur idéale pour tenir sur l'écran d'un téléphone */
+        border-radius: 25px;
+        padding: 20px;
+    }
+    .metier-card-content h3 {
+        font-size: 1.15rem;
+    }
+}
